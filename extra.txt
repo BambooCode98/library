@@ -1,0 +1,16 @@
+working submit button that does not referesh page and puts user input immediately on the page 
+--- BELOW ----
+
+"use strict";
+
+let library = [];
+const form = document.forms["addbook"];
+const hi = document.querySelector('#hi');
+console.log(form);
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const name = form.querySelector('input[type="text"]').value;
+  console.log(name);
+  hi.innerHTML = name;
+})
