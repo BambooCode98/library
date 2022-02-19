@@ -11,15 +11,25 @@
   <body>
     <h1 id="libraryshelf">Library</h1>
 
-    <form id="addbook">
-      title: 
-      <input type="text" id="title" />
-      author:
-      <input type="text" id="author" />
-      
-      <button id="button">New Book</button>
-    </form>
+    <button class="unhideModal">New Book</button>
 
+    <div class="modal hidden">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <form id="addbook">
+          Title: 
+          <input type="text" id="title" />
+          <br>
+          Author:
+          <input type="text" id="author" />
+          <br>
+          Pages:
+          <input type="text" id="pages" />
+          <br>
+          <button id="button">Add Book</button>
+        </form>
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

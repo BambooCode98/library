@@ -2,7 +2,10 @@
 
 let library = [];
 const form = document.forms["addbook"];
-const shelf = document.querySelector('form');
+const shelf = document.querySelector('body');
+const showbtn = document.querySelector('.unhideModal');
+const modal = document.querySelector('.modal');
+const close = document.querySelector('.close-modal');
 
 
 
@@ -27,40 +30,27 @@ form.addEventListener('submit', function(e) {
   // console.log(newBook);
   console.log(library);
 
-  // for(let i = 0; i < library.length; i++) {
+  
 
-    //creating a book on the page
-    const bookCard = document.createElement('div');
-    const bookTitle = document.createElement('h1');
-    const bookAuthor = document.createElement('h3');
-    shelf.append(bookCard);
-    bookCard.append(bookTitle);
-    bookTitle.textContent = newBook.title;
-    bookCard.append(bookAuthor);
-    bookAuthor.textContent = newBook.author;
-  // }
+  //creating a book on the page
+  const bookCard = document.createElement('div');
+  const bookTitle = document.createElement('h1');
+  const bookAuthor = document.createElement('h3');
+  shelf.append(bookCard);
+  bookCard.append(bookTitle);
+  bookTitle.textContent = newBook.title;
+  bookCard.append(bookAuthor);
+  bookAuthor.textContent = newBook.author;
+  
 
 })
 
-function addBookToLibraryPage() {
-  
-  library.forEach((element, index) => {
+showbtn.addEventListener('click', function() {
+  modal.classList.remove('hidden');
+})
 
-    //creating a book on the page
-
-    const bookCard = document.createElement('div');
-    const bookTitle = document.createElement('h1');
-    const bookAuthor = document.createElement('h3');
-    shelf.append(bookCard);
-    bookCard.append(bookTitle);
-    bookTitle.textContent = element.title;
-    console.log(element.title, index);
-    bookCard.append(bookAuthor);
-    bookAuthor.textContent = element.author;
-  })
-}
-
-
-
+close.addEventListener('click', function() {
+  modal.classList.add('hidden');
+})
 
 

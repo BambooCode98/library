@@ -14,3 +14,22 @@ form.addEventListener('submit', function(e) {
   console.log(name);
   hi.innerHTML = name;
 })
+
+
+function addBookToLibraryPage() {
+  
+  library.forEach((element, index) => {
+
+    //creating a book on the page
+
+    const bookCard = document.createElement('div');
+    const bookTitle = document.createElement('h1');
+    const bookAuthor = document.createElement('h3');
+    shelf.append(bookCard);
+    bookCard.append(bookTitle);
+    bookTitle.textContent = element.title;
+    console.log(element.title, index);
+    bookCard.append(bookAuthor);
+    bookAuthor.textContent = element.author;
+  })
+}
