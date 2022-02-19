@@ -2,7 +2,7 @@
 
 let library = [];
 const form = document.forms["addbook"];
-const shelf = document.querySelector('body');
+const shelf = document.querySelector('form');
 
 
 
@@ -27,7 +27,7 @@ form.addEventListener('submit', function(e) {
   // console.log(newBook);
   console.log(library);
 
-  library.forEach((element, index) => {
+  // for(let i = 0; i < library.length; i++) {
 
     //creating a book on the page
     const bookCard = document.createElement('div');
@@ -35,11 +35,10 @@ form.addEventListener('submit', function(e) {
     const bookAuthor = document.createElement('h3');
     shelf.append(bookCard);
     bookCard.append(bookTitle);
-    bookTitle.textContent = element.title;
-    // console.log(element.title, index);
+    bookTitle.textContent = newBook.title;
     bookCard.append(bookAuthor);
-    bookAuthor.textContent = element.author;
-  })
+    bookAuthor.textContent = newBook.author;
+  // }
 
 })
 
@@ -48,7 +47,6 @@ function addBookToLibraryPage() {
   library.forEach((element, index) => {
 
     //creating a book on the page
-    library.push(newBook);
 
     const bookCard = document.createElement('div');
     const bookTitle = document.createElement('h1');
